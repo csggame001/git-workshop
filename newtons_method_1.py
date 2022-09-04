@@ -8,11 +8,9 @@
  This is one professor Kennedy code from Non-Linear Solvers section 1.3 Now We are Ready! 
  This file was added based on the instruction of Adding Some Python Code within the Git Workshop.
 """
-
-
 import sys
 
-from typing import (Callable)
+from typing import (Callable, Tuple)
 import typing
 from fractions import (Fraction)
 
@@ -20,7 +18,10 @@ from fractions import (Fraction)
 EPSILON = 10e-6
 MAX_ITERATIONS = 100
 
-def newtons_method(f, df, x_n, eps=EPSILON):
+def newtons_method(f: Callable[[float], float],
+                   df: Callable[[float], float],
+                   x_n: float,
+                   eps: float = EPSILON) -> Tuple[int, float]:
 
     n = 0
 
